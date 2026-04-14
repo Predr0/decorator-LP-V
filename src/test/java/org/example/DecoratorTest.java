@@ -8,7 +8,7 @@ class DecoratorTest {
     @Test
     void deveReproduzirMusicaSimplesSemEfeitos() {
         Musica musica = new MusicaComum();
-        assertEquals("Tocando melodia base", musica.reproduzir());
+        assertEquals("Tocando Musica", musica.reproduzir());
     }
 
     @Test
@@ -17,7 +17,7 @@ class DecoratorTest {
         musica = new BassBoost(musica);
 
         String resultado = musica.reproduzir();
-        assertTrue(resultado.contains("Tocando melodia base"));
+        assertTrue(resultado.contains("Tocando Musica"));
         assertTrue(resultado.contains("[BASS BOOST ATIVO]"));
     }
 
@@ -27,7 +27,7 @@ class DecoratorTest {
 
         String resultado = musicaCompleta.reproduzir();
 
-        assertTrue(resultado.contains("Tocando melodia base"));
+        assertTrue(resultado.contains("Tocando Musica"));
         assertTrue(resultado.contains("[BASS BOOST ATIVO]"));
         assertTrue(resultado.contains("[EFEITO REVERB]"));
     }
